@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     
     static Scanner sn = new Scanner(System.in);
-    static Cuenta cuenta = new Cuenta();
+    
     public static void main(String[] args) throws Exception {
         double dinero;
         String Titular;
@@ -17,13 +17,13 @@ public class Main {
                 System.out.println("Ingrese el nombre del titular de la cuenta");
                 Titular = sn.nextLine();
                 sn.nextLine();
-                cuenta.setTitular_de_cuenta(Titular);
+               
                 System.out.print("Ingrese su dinero actual ");
                 dinero = sn.nextDouble();
                 if (dinero < 1){
                     System.out.println("No puede ingresar dinero menor a 1 dolar");
                 }
-                cuenta.setDinero_en_cuenta(dinero);
+                
                 
             }
 
@@ -32,18 +32,18 @@ public class Main {
                 System.out.println("Ingreso");
                 System.out.print("Cuanto dinero desea ingresar ");
                 dinero = sn.nextDouble();
-                cuenta.Agregar_Dinero(dinero);
+                
             }
 
             else if (opcion == 3){
                 System.out.println("Retiro");
                 System.out.print("Cuanto dinero desea retirar ");
                 dinero = sn.nextDouble();
-                cuenta.Retirar_Dinero(dinero);
+               
                 
             }
             else if (opcion == 4){
-                cuenta.Mostrar_Cuenta();
+                
             }
             else if (opcion == 5){
                 System.exit(0);
