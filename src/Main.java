@@ -1,4 +1,8 @@
+import java.util.Scanner;
+
 public class Main {
+
+    static Scanner sn = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
 
         int opcion = menu();
@@ -32,6 +36,8 @@ public class Main {
             System.out.println("1.- Ingresar Dinero");
             System.out.println("2.- Retirar");
             System.out.println("3.- Salir");
+            System.out.print("Ingrese una opcion");
+            opcion = sn.nextInt();
             if (opcion > 3 || opcion < 0){
                 System.out.println("ingrese un valor entre 1 y 3");
             }
