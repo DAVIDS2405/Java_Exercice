@@ -1,13 +1,13 @@
 
 public class Series {
     //Attributes
-    String Titulo;
+  String Titulo;
     int Numero_Temporadas = 3;
     boolean Entregado = false;
     String Genero;
     String Creador;
-    
-    
+
+
     //Methods
     public void entregar(){
 
