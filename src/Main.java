@@ -17,7 +17,24 @@ public class Main {
                while(opcion_menu_secundario !=4){
 
                 if(opcion == 1){
+                    String titulo , genero, creador;
+                    int temporadas;
+                    for (int i = 0 ; i < series.length; i++){
+                        System.out.println("");
+                        System.out.println("Datos a ingresar");
+                        System.out.println("Serie " + (i+1));
+                        System.out.print("Titulo ");
+                        titulo = sn.nextLine();
+                        System.out.println("Temporadas");
+                        temporadas = sn.nextInt();
+                        System.out.println("Genero");
+                        genero = sn.nextLine();
+                        System.out.println("Creador");
+                        creador = sn.nextLine();
 
+                        series[i] = new Series(titulo, temporadas, genero, creador);
+
+                    }
 
                 }
                 else if (opcion == 2){
@@ -112,4 +129,12 @@ public class Main {
         return opcion;
     }
 
+    //Mostrar datos series
+    public static void Mostrar_datos(){
+        for (Series Mostrar_Series: series){
+            System.out.println(Mostrar_Series.toString());
+        }
+    }
+    
+    //Mostrar datos Juegos
 }
