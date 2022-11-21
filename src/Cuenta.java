@@ -1,4 +1,8 @@
+
+
 public class Cuenta {
+
+    
     
     //ATRIBUTES 
     double dinero_en_cuenta;
@@ -6,11 +10,23 @@ public class Cuenta {
 
     //Metodos
 
-    public void Retirar_Dinero(){
+    //metodo para retirar dinero
+    public void Retirar_Dinero(double dinero)//variable para el dinero
+    {
+        //Validacion del dinero si es menor a 0
+        if (getDinero_en_cuenta() <= 0 ){
+            System.out.println("no puedes retirar dinero inexistente");
+        }
+        //Validacion en caso de que haya dinero
+        else{
+            setDinero_en_cuenta(getDinero_en_cuenta() - dinero);
+        }
+
 
     }
-    public void Agregar_Dinero(){
-
+    public void Agregar_Dinero(double dinero){
+        //sirve para agregar mas dinero 
+        setDinero_en_cuenta(getDinero_en_cuenta()+dinero);
     }
 
     //Constuctor
@@ -34,5 +50,14 @@ public class Cuenta {
         Titular_de_cuenta = titular_de_cuenta;
     }
 
+    public void Mostrar_Cuenta(){
+        System.out.println("");
+        System.out.println("Titular" + getTitular_de_cuenta());
+        System.out.println("Dinero " + getDinero_en_cuenta());
+        System.out.println("");
+    }
+
+
+    
 
 }
