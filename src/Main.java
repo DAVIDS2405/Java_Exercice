@@ -1,51 +1,41 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        //Presentation
-        System.out.println("Presentacion del juego de God of War");
-        System.out.println(" El que tendra el goty del año <3");
 
-        //New God of War Name
-        Videogames Game1 = new Videogames();
+        int opcion = menu();
+        while(opcion != 3){
 
-        //Get the Atrributes of the game
+            if (opcion == 1){
+                System.out.println("opcion 1");
+            }
+
+            else if (opcion == 2){
+                System.out.println("opcion 2");
+            }
+
+            else if (opcion == 3){
+                System.out.println(" fin del programa");
+                System.exit(0);
+            }
+
+            opcion = menu();
+        }
         
-        //PS5
-
-        System.out.println("  --------------------------------------"); // Getter extrac the original description and numebers of the game
-        System.out.println(" |                  "+ Game1.getConsole_Name() + "                 |");
-        System.out.println(" |          "+ Game1.getName() + "         |");
-        System.out.println(" |          "+ Game1.getCompany() + "         |"); 
-        System.out.println(" |          "+ Game1.getSerial_Number() + "                   |");
-        System.out.println(" |          "+ Game1.getNumber_Of_Players() +"                           |");
-        System.out.println(" |          " + Game1.getDescription() + "           |");
-        System.out.println(" |          " + Game1.getGame_Price() + "$                      |");
-        System.out.println(" |          " + Game1.getRestriction() + "                       |");
-        System.out.println("  --------------------------------------");
-        System.out.println();
-
-        //PS4
-        Videogames Game2 = new Videogames(); //Setter change the words numbers, etc of the original
-        Game2.setConsole_Name("PS4");
-        Game2.setGame_Price(49.99);
-        Game2.setSerial_Number(2123213221);
+    }
 
 
-        System.out.println("  --------------------------------------"); // Getter extrac the new and old description
-        System.out.println(" |                  " + Game2.getConsole_Name() + "                 |");
-        System.out.println(" |          " + Game2.getName() + "         |");
-        System.out.println(" |          " + Game2.getCompany() + "         |");
-        System.out.println(" |          " + Game1.getDescription() + "           |");
-        System.out.println(" |          " + Game2.getSerial_Number() + "                  |");
-        System.out.println(" |          " + Game2.getNumber_Of_Players() + "                           |");
-        System.out.println(" |          " + Game2.getGame_Price() + "$                      |");
-        System.out.println(" |          " + Game2.getRestriction() + "                       |");
-        System.out.println("  --------------------------------------");
+    //Menu principal
+    public static int menu(){
+        int opcion = 0;
 
-        
-
-
-
-
-        
+        while (opcion > 3 || opcion < 0 ){
+            System.out.println("BANCO DEL PICHINCHA");
+            System.out.println("1.- Ingresar Dinero");
+            System.out.println("2.- Retirar");
+            System.out.println("3.- Salir");
+            if (opcion > 3 || opcion < 0){
+                System.out.println("ingrese un valor entre 1 y 3");
+            }
+        }
+        return opcion;
     }
 }
