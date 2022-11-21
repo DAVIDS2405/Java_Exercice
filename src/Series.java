@@ -9,50 +9,45 @@ public class Series {
     
     
     //Methods
+    public void entregar(){
+
+    }
+    public void devolver(){
+
+    }
+    public boolean isEntregado() {
+        return Entregado;
+    }
 
 
     //Constructor
-    public void Serie1 (){
-        Titulo = "Friends";
-        Numero_Temporadas = 10;
-        Entregado = false;
-        Genero = "Comedia";
-        Creador = "Marta Kauffman y David Crane";
-
-    }
-    public void Serie2 (){
-        Titulo = "Avatar la leyenda de Anng";
-        Numero_Temporadas = 4;
-        Entregado = false;
-        Genero = "Aventura";
-        Creador = " Michael Dante DiMartino y Bryan Konietzko";
-
-    }
-    public void Serie3 (){
-        Titulo = "Mr.Robot";
-        Numero_Temporadas = 10;
-        Entregado = false;
-        Genero = "Investigacion";
-        Creador = "Sam Esmail";
-
-    }
-    public void Serie4 (){
-        Titulo = "Saint Seiya";
-        Numero_Temporadas;
-        Entregado = false;
-        Genero = "Comedia";
-        Creador = "Marta Kauffman y David Crane";
-
+    public Series(String titulo, int numero_Temporadas, boolean entregado, String genero, String creador) {
+        Titulo = titulo;
+        Numero_Temporadas = numero_Temporadas;
+        Entregado = entregado;
+        Genero = genero;
+        Creador = creador;
     }
 
+    public Series(String titulo, String creador) {
+        Titulo = titulo;
+        Creador = creador;
+    }
 
+    public Series(String titulo, int numero_Temporadas, String genero, String creador) {
+        Titulo = titulo;
+        Numero_Temporadas = numero_Temporadas;
+        Genero = genero;
+        Creador = creador;
+    }
     
 
+    
     //Getter and setter
     public String getTitulo() {
         return Titulo;
     }
-
+    
 
     public void setTitulo(String titulo) {
         Titulo = titulo;
@@ -67,17 +62,6 @@ public class Series {
     public void setNumero_Temporadas(int numero_Temporadas) {
         Numero_Temporadas = numero_Temporadas;
     }
-
-
-    public boolean isEntregado() {
-        return Entregado;
-    }
-
-
-    public void setEntregado(boolean entregado) {
-        Entregado = entregado;
-    }
-
 
     public String getGenero() {
         return Genero;
