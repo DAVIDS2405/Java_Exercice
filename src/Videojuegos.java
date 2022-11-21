@@ -1,4 +1,4 @@
-public class videojuegos{
+public class Videojuegos{
 
     //Atributos
     String Titulo;
