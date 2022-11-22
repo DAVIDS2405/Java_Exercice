@@ -1,51 +1,79 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        //Presentation
-        System.out.println("Presentacion del juego de God of War");
-        System.out.println(" El que tendra el goty del año <3");
 
-        //New God of War Name
-        Videogames Game1 = new Videogames();
+        int opcion_Menuprincipal = menu_principal();
+        int opcion_Menusecundario = menu_secundario();
+        while(opcion_Menuprincipal != 2){
 
-        //Get the Atrributes of the game
+            if (opcion_Menuprincipal == 1){
+               
+
+                while (opcion_Menusecundario !=4){
+                    if(opcion_Menusecundario == 1){
+
+                    }
+                    else if ( opcion_Menusecundario == 2){
+
+                    }
+                    else if (opcion_Menusecundario == 3){
+
+                    }
+                    else if ( opcion_Menusecundario ==4 ){
+                        System.exit(0);
+                    }
+
+
+                    opcion_Menusecundario = menu_secundario();
+                }
+                
+            }
+            else{
+                System.exit(0);
+            }
+
+            opcion_Menuprincipal = menu_principal();
+
+        }
         
-        //PS5
-
-        System.out.println("  --------------------------------------"); // Getter extrac the original description and numebers of the game
-        System.out.println(" |                  "+ Game1.getConsole_Name() + "                 |");
-        System.out.println(" |          "+ Game1.getName() + "         |");
-        System.out.println(" |          "+ Game1.getCompany() + "         |"); 
-        System.out.println(" |          "+ Game1.getSerial_Number() + "                   |");
-        System.out.println(" |          "+ Game1.getNumber_Of_Players() +"                           |");
-        System.out.println(" |          " + Game1.getDescription() + "           |");
-        System.out.println(" |          " + Game1.getGame_Price() + "$                      |");
-        System.out.println(" |          " + Game1.getRestriction() + "                       |");
-        System.out.println("  --------------------------------------");
-        System.out.println();
-
-        //PS4
-        Videogames Game2 = new Videogames(); //Setter change the words numbers, etc of the original
-        Game2.setConsole_Name("PS4");
-        Game2.setGame_Price(49.99);
-        Game2.setSerial_Number(2123213221);
-
-
-        System.out.println("  --------------------------------------"); // Getter extrac the new and old description
-        System.out.println(" |                  " + Game2.getConsole_Name() + "                 |");
-        System.out.println(" |          " + Game2.getName() + "         |");
-        System.out.println(" |          " + Game2.getCompany() + "         |");
-        System.out.println(" |          " + Game1.getDescription() + "           |");
-        System.out.println(" |          " + Game2.getSerial_Number() + "                  |");
-        System.out.println(" |          " + Game2.getNumber_Of_Players() + "                           |");
-        System.out.println(" |          " + Game2.getGame_Price() + "$                      |");
-        System.out.println(" |          " + Game2.getRestriction() + "                       |");
-        System.out.println("  --------------------------------------");
-
-        
-
-
-
 
         
     }
+
+
+    //Menu principal
+
+    public static int menu_principal(){
+        int opcion = 0;
+        while(opcion > 2 || opcion < 1){
+            System.out.println("Bancho Pichincha");
+            System.out.println("1.- Ingresar tarjeta");
+            System.out.println("2.- Salir");
+
+            if (opcion >2 || opcion < 1){
+                System.out.println("ingrese una opcion valida entre 1 y 2");
+            }
+        }
+
+        return opcion;
+    }
+    
+    //Menu Secundario
+    public static int menu_secundario(){
+        int opcion = 0;
+        while(opcion > 4 || opcion < 1){
+            System.out.println("Bancho Pichincha");
+            System.out.println("1.- Ingresar dinero");
+            System.out.println("2.- Depósitar dinero");
+            System.out.println("3.- Retirar dinero");
+            System.out.println("4.- Salir");
+
+            if (opcion >4 || opcion < 1){
+                System.out.println("ingrese una opcion valida entre 1 y 4");
+            }
+        }
+
+        return opcion;
+    }
+
+    
 }
