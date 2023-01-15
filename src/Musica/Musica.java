@@ -1,7 +1,7 @@
 package Musica;
 public  class  Musica {
-    int Tempo;
-    String Nombre_Cancion, Genero, Instrumentos;
+    private int Tempo;
+    private String Nombre_Cancion, Genero, Instrumentos;
 
 
 
@@ -16,8 +16,8 @@ public  class  Musica {
 
     @Override
     public String toString() {
-        return "Musica [Tempo=" + Tempo + ", Nombre_Cancion=" + Nombre_Cancion + ", Genero=" + Genero
-                + ", Instrumentos=" + Instrumentos + "]";
+        return "\nNombre de la cancion " + Nombre_Cancion + "\nGenero " 
+        + Genero + "\nInstrumentos " + Instrumentos + "\nTempo " + Tempo;
     }
 
 
