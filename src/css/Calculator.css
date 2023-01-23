@@ -23,3 +23,19 @@
     -fx-background-color: #0000001a;
     -fx-background-radius: 12px;
 }
+.menu-bar{
+    
+    -fx-background-color: #0000001a;
+    -fx-background-radius: 12px;
+}
+.menu-bar:pressed{
+    -fx-background-color: #ff2f5957;
+}
+.menu-bar:hover {
+    -fx-background-color: #FF2F59;
+
+}
+.menu:hover {
+    -fx-background-color: #ff2fcb00;
+
+}
