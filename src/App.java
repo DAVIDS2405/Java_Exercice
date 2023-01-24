@@ -1,22 +1,20 @@
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javax.swing.JFrame;
 
 
-public class App extends Application {
-    public static void main(String[] args) {
-      launch(args);
+
+public class App extends JFrame {
+    public App(){
+        super("Graficas ");
+        setSize(600,400);
+        setVisible(true);
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-      Parent calculadora = FXMLLoader.load(getClass().getResource("/assets/view/Calculator.fxml"));
-      stage.setScene(new Scene(calculadora));
-      stage.setTitle("Calculator");
-      stage.show();
+    
+    public static void main(String[] args) throws Exception {
+        App aplicacion = new App();
+        Dibujos2D_3D dibujo = new Dibujos2D_3D();
+        aplicacion.add(dibujo);
+        aplicacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
-    
-    
 }
