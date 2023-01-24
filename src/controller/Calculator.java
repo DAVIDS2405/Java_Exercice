@@ -1,126 +1,100 @@
 package controller;
 
-
-import java.text.ParseException;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class Calculator {
 
     @FXML
-    private Button Clean;
-
-    @FXML
-    private Button Delete;
-
-    @FXML
-    private Button Division;
-
-    @FXML
-    private Button Equals;
-
-    @FXML
-    private MenuBar History;
-
-    @FXML
     private TextArea History_Area;
-
     @FXML
-    private Button Minus;
-
-    @FXML
-    private Button Multiplication;
-
-    @FXML
-    private Button Number0;
-
-    @FXML
-    private Button Number1;
-
-    @FXML
-    private Button Number2;
-
-    @FXML
-    private Button Number3;
-
-    @FXML
-    private Button Number4;
-
-    @FXML
-    private Button Number5;
-
-    @FXML
-    private Button Number6;
-
-    @FXML
-    private Button Number7;
-
-    @FXML
-    private Button Number8;
-
-    @FXML
-    private Button Number9;
-
-    @FXML
-    private Button Plus;
-
+    private TextField Result;
     @FXML
     private Label Prevnum;
 
-    @FXML
-    private TextField Result;
-
-    boolean Operationon = true;
-    double LastOperation = 0;
+    private double Num1 = 0;
+    private String Operator = "+";
 
     @FXML
     void Addvalue(ActionEvent event) {
-        Result.setText(Result.getText() + ((Button)event.getSource()).getText());
-        Operationon = true;
+        int value = Integer.parseInt(((Button)event.getSource()).getText());
+        Result.setText(Double.parseDouble(Result.getText()) == 0.0 ? String.valueOf((double)value) : String.valueOf(Double.parseDouble(Result.getText())*10 + value));
+    //    System.out.println(String.valueOf((double) value));
+    //    System.out.println(String.valueOf(Double.parseDouble(Result.getText())*10 + value));
     }
      @FXML
     void AddOperation(ActionEvent event) {
-        if(Operationon){
-            Result.setText(Result.getText() + ((Button) event.getSource()).getText());
-            Operationon = false;
-        }
+        
+            String Symbol = ((Button) event.getSource()).getId();
+            if(Symbol.equals("Equals")){
+                double num2 = Double.parseDouble(Result.getText());
+                // System.out.println(num2);
+                switch(Operator){
+                    case "+":{
+                        Result.setText((Num1 + num2) + "");
+                        History_Area.setText(Num1 + Operator + num2 + " = " + Result.getText() + "\n" +  History_Area.getText());
+                        Prevnum.setText(Num1 + Operator + num2);
+    
+                        break;
+                    }
+                    case "-": {
+                        Result.setText((Num1 - num2) + "");
+                        History_Area.setText(Num1 + Operator + num2 + " = " + Result.getText() + "\n" +  History_Area.getText());
+                        Prevnum.setText(Num1 + Operator + num2);
+                        break;
+                    }
+                    case "*": {
+                        Result.setText((Num1 * num2) + "");
+                        History_Area.setText(Num1 + Operator + num2 + " = " + Result.getText() + "\n" +  History_Area.getText());
+                        Prevnum.setText(Num1 + Operator + num2);
+                        break;
+                    }
+                    case "/": {
+                        Result.setText((Num1 / num2) + "");
+                        History_Area.setText(Num1 + Operator + num2 + " = " + Result.getText() + "\n" +  History_Area.getText());
+                        Prevnum.setText(Num1 + Operator + num2);
+                        
+                    }
+                    
+                }
+                
+                Operator = ".";
+            }
+            else if(Symbol.equals("Clean")){
+                Result.setText(String.valueOf(0.0));
+                Operator = ".";
+            }
+            else{
+                switch(Symbol){
+                    case "Plus" -> Operator ="+";
+                    case "Minus" -> Operator = "-";        
+                    case "Multiplication" -> Operator = "*";
+                    case "Division" -> Operator = "/";
+                }
+                Num1 = Double.parseDouble(Result.getText());
+                // System.out.println(Num1);
+                Result.setText(String.valueOf(0.0));
+                
+            }
+           
+           
+        
 
     }
 
-
-    public void Clean(){
-        Result.setText("");
-        Operationon=true;
-    }
 
     public void Delete(){
-        if(!(Result.getText().length() == 0)){
-            Result.setText(Result.getText().substring(0,Result.getText().length() -1));
+        if(!(Result.getText().length() == 0.0)){
+            // System.out.println(Result.getText().length());
+            Result.setText(Result.getText().substring(0,Result.getText().length() - 1));
+            System.out.println(Result.getText().substring(0, Result.getText().length() - 1));
         }
     }
 
-    public void Resultoperation(){
-       
-        System.out.println(LastOperation = Double.parseDouble(Result.getText()));
-        
-        
-        
-    }
-    public void GetlastResult(){
-        if(!(LastOperation == 0.0)){
-            Result.setText(Result.getText() + LastOperation);
-        }
-    }
+   
   
 }
