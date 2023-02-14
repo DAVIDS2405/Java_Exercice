@@ -4,19 +4,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class App extends Application {
-    public static void main(String[] args) {
-      launch(args);
+    public static void main(String[] args) throws Exception {
+        launch(args);
     }
-
+    
     @Override
     public void start(Stage stage) throws Exception {
-      Parent calculadora = FXMLLoader.load(getClass().getResource("/assets/view/Calculator.fxml"));
-      stage.setScene(new Scene(calculadora));
-      stage.setTitle("Calculator");
-      stage.show();
+        Parent abarrotes = FXMLLoader.load(getClass().getResource("/assets/view/Abarrotes.fxml"));
+        stage.setScene(new Scene(abarrotes));
+        stage.setTitle("David Basantes");
+        stage.show();
     }
-    
-    
 }
