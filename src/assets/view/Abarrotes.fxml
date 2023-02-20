@@ -39,7 +39,7 @@
       </Label>
       <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="178.0" layoutY="297.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Provedor" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="454.0">
          <graphic>
-            <ComboBox fx:id="prv_combo" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="198.0" />
+            <ComboBox fx:id="prv_combo" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="198.0" visibleRowCount="20" />
          </graphic>
       </Label>
       <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="189.0" layoutY="179.0" prefHeight="25.0" prefWidth="240.0" text="Precio" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="454.0">
