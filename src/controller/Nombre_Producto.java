@@ -5,28 +5,31 @@ import java.sql.*;
 import database.connector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-public class Tipo_producto {
+
+public class Nombre_Producto {
     private Connection con = null;
-    private String Tipo;
+    String Nombre;
 
-    
-    public Tipo_producto() {
+    public Nombre_Producto(String nombre) {
+        Nombre = nombre;
     }
-
-    public Tipo_producto(String tipo) {
-        Tipo = tipo;
+    
+    public Nombre_Producto() {
     }
 
     @Override
     public String toString() {
-        return  Tipo ;
+        return  Nombre;
+    }
+    
+    public String getNombre() {
+        return Nombre;
     }
 
-
-    public ObservableList<Tipo_producto> getNombre_Producto() {
+    public ObservableList<Nombre_Producto> getNombre_Producto() {
 
         con = connector.connection_java();
-        ObservableList<Tipo_producto> prd_t = FXCollections.observableArrayList();
+        ObservableList<Nombre_Producto> prd = FXCollections.observableArrayList();
         String query = "select * from Productos";
 
         try {
@@ -37,9 +40,10 @@ public class Tipo_producto {
 
             while (rs.next()) {
 
-                String tipo_producto = rs.getString("tip_prd");
-                Tipo_producto prd_list = new Tipo_producto(tipo_producto);
-                prd_t.add(prd_list);
+                String nombre_producto = rs.getString("nbr_prd");
+
+                Nombre_Producto prd_list = new Nombre_Producto(nombre_producto);
+                prd.add(prd_list);
 
             }
             con.close();
@@ -47,11 +51,10 @@ public class Tipo_producto {
 
         }
 
-        return prd_t;
+        return prd;
 
     }
-    
 
-   
+    
     
 }

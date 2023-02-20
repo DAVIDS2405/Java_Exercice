@@ -9,6 +9,15 @@
         "/usr/lib/jvm/javafx-sdk-19/lib/javafx.fxml.jar",
         "/usr/lib/jvm/javafx-sdk-19/lib/javafx.controls.jar",
         "/usr/lib/jvm/javafx-sdk-19/lib/javafx.base.jar",
-        "/usr/lib/jvm/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar"
+        "/usr/lib/jvm/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.base.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.controls.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.fxml.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.graphics.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.media.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.swing.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.web.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx-swt.jar",
+        "c:\\Program Files\\Java\\mysql-connector-j-8.0.32\\mysql-connector-j-8.0.32.jar"
     ]
 }

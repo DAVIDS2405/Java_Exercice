@@ -7,7 +7,7 @@ public class connector {
 
     public static Connection connection_java(){
         
-        String url = "jdbc:mysql://localhost:3306/Abarrotes";
+        String url = "jdbc:mysql://localhost:3307/Abarrotes";
         String user = "root";
         String password = "1750974550Db@q";
         String driver = "com.mysql.cj.jdbc.Driver";

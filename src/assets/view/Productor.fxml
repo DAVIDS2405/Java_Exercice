@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Prv_Window">
+   <children>
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="150.0" layoutY="72.0" prefHeight="25.0" prefWidth="206.0" text="Nombre" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="183.0">
+         <graphic>
+            <TextField fx:id="Nombre" prefHeight="25.0" prefWidth="155.0" />
+         </graphic>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="163.0" layoutY="122.0" text="Marca" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="183.0">
+         <graphic>
+            <TextField fx:id="Marca" prefHeight="25.0" prefWidth="156.0" />
+         </graphic>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="183.0" layoutY="175.0" text="CI" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="183.0">
+         <graphic>
+            <TextField fx:id="Ci" prefHeight="25.0" prefWidth="158.0" />
+         </graphic>
+      </Label>
+      <HBox alignment="CENTER" layoutX="96.0" layoutY="285.0" prefHeight="46.0" prefWidth="347.0" spacing="25.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="96.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#Search" prefHeight="46.0" prefWidth="88.0" text="Buscar" />
+            <Button mnemonicParsing="false" onMouseClicked="#Update" prefHeight="46.0" prefWidth="88.0" text="Actualizar" />
+            <Button mnemonicParsing="false" onMouseClicked="#Delete" prefHeight="46.0" prefWidth="88.0" text="Eliminar" />
+            <Button mnemonicParsing="false" onMouseClicked="#Create" prefHeight="46.0" prefWidth="88.0" text="Crear" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
