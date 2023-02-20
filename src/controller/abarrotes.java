@@ -96,6 +96,11 @@ public class abarrotes implements Initializable  {
     
     @FXML
     void Create(MouseEvent event) {
+        Provedor provedor = new Provedor();
+        Ver_Prv = FXCollections.observableArrayList();
+        Ver_Prv = provedor.getCi_Prv();
+        prv_combo.setItems(Ver_Prv);
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         if((Nombre.getEditor().getText().isEmpty())|| (tp_combox.getEditor().getText().isEmpty()) || (precio.getText().isEmpty()) || (cantidad.getText().isEmpty())||(prv_combo.getEditor().getText().isEmpty())||(fch_elab.getEditor().getText().isEmpty())||( fch_exp.getEditor().getText().isEmpty())){
             alert.setAlertType(AlertType.ERROR);
@@ -129,7 +134,8 @@ public class abarrotes implements Initializable  {
                  */
 
 
-            } catch (Exception e) {
+            } catch (SQLException e) {
+                System.err.println("SQL exception: " + e.getMessage());
 
             }
         }
@@ -138,6 +144,11 @@ public class abarrotes implements Initializable  {
 
     @FXML
     void Delete(MouseEvent event) {
+        Provedor provedor = new Provedor();
+        Ver_Prv = FXCollections.observableArrayList();
+        Ver_Prv = provedor.getCi_Prv();
+        prv_combo.setItems(Ver_Prv);
+
         if(Nombre.getEditor().getText().isEmpty()){
             alert.setAlertType(AlertType.ERROR);
             alert.setTitle("Error");
@@ -164,7 +175,8 @@ public class abarrotes implements Initializable  {
                 rs.close();
             } 
             catch (SQLException e) {
-                e.getSQLState();
+                System.err.println("SQL exception: " + e.getMessage());
+
             }
         }
 
@@ -174,7 +186,11 @@ public class abarrotes implements Initializable  {
 
     @FXML
     void Search(MouseEvent event) {
-        
+        Provedor provedor = new Provedor();
+        Ver_Prv = FXCollections.observableArrayList();
+        Ver_Prv = provedor.getCi_Prv();
+        prv_combo.setItems(Ver_Prv);
+
         if((Nombre.getEditor().getText()).isBlank()){
             alert.setAlertType(AlertType.ERROR);
             alert.setTitle("Error");
@@ -251,12 +267,8 @@ public class abarrotes implements Initializable  {
                 pst.close();
 
             } catch (SQLException e) {
-                alert.setAlertType(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setContentText(e.getStackTrace().toString());
-                alert.setHeaderText("Error Base de datos producto");
-                alert.showAndWait();
-                e.printStackTrace();
+                System.err.println("SQL exception: " + e.getMessage());
+
             }
         }
 
@@ -301,7 +313,7 @@ public class abarrotes implements Initializable  {
 
             } catch (SQLException e) {
                 System.err.println("SQL exception: " + e.getMessage());
-                System.exit(1);
+                
             }
         }
     }
@@ -337,7 +349,7 @@ public class abarrotes implements Initializable  {
             // });
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            ex.getMessage();
 
         }
     }

@@ -2,8 +2,6 @@ package controller;
 
 import java.sql.*;
 
-import javax.swing.JOptionPane;
-
 import database.connector;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
