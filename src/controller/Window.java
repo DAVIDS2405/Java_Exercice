@@ -1,13 +1,16 @@
 package controller;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Date;
+import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
-
+import java.util.Date;
 import java.util.ResourceBundle;
+
+import javax.xml.catalog.CatalogFeatures.Feature;
 
 import database.connection_mysql;
 import javafx.collections.FXCollections;
@@ -50,25 +53,25 @@ public class Window implements Initializable {
     private ObservableList<Dia> Ver_Dias;
 
     @FXML
-    void Create_date(MouseEvent event) {
+    void Create_date(MouseEvent event) throws ParseException {
         String Fechas = (Años.getEditor().getText()) + (Meses.getEditor().getText()) + (Dias.getEditor().getText());
-  
-        
-        con = connection_mysql.connection_java();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMMM-dd");
-        Date fecha = (Date) formatter.parse(Fechas + "");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MMMM-dd");
+        Date fecha = formatter.parse(Fechas);
         System.out.println(fecha);
-        // query = "insert into fechas (fechas) values(?)";
-        // try {
-        //     pst = con.prepareStatement(query);
-        //     pst.setDate(1, fecha);
+        
+         con = connection_mysql.connection_java();
+        
+        System.out.println(fecha);
+        query = "insert into fechas (fechas) values(?)";
+        try {
+            pst = con.prepareStatement(query);
+            pst.setDate(1,fecha);
             
-        // } catch (Exception e) {
+        } catch (Exception e) {
            
-        // }
+        }
     }
     
-    //combo1.getEditor().getText();
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
